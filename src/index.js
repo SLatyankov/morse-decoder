@@ -40,9 +40,9 @@ const MORSE_TABLE = {
 function decode(expr) {
 var arrExpr = expr.split(''); 
 var arr = new Array;
-for (let i = 0; i <= arrExpr.length + 3000; i++) {
-    var x = arrExpr.splice(0, 10);
-    
+var n = arrExpr.length/10;
+for (let i = 0; i < n; i++) {
+    var x = arrExpr.splice(0, 10);   
     if (x[0] === '*') {
         arr[i] = ' ';
     } else {
@@ -60,7 +60,6 @@ for (let i = 0; i <= arrExpr.length + 3000; i++) {
     }
 }
 var str = arr.join('');
-
 return str;
 }
 
